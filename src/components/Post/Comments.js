@@ -8,14 +8,16 @@ const Comments = props => {
   const { data, facebook, slug, theme } = props;
 
   const config = {
-    url: "https://rameezkhan.me/example",
-    identifier: "example",
-    title: "Example"
+    url: `https://www.rameezkhan.me${slug}`
   };
+
+  const shortName = "rameezkhan-me";
+
+  console.log(props);
 
   return (
     <React.Fragment>
-      <DiscussionEmbed shortName={"rameezkhan-me"} config={config} />
+      <DiscussionEmbed shortname={shortName} config={config} />
     </React.Fragment>
   );
 };
