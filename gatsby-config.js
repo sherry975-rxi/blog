@@ -3,7 +3,7 @@ const config = require('./content/meta/config');
 const transformer = require('./src/utils/algolia');
 
 const query = `{
-  allMarkdownRemark( filter: { fields: { content: { eq: "posts" } } }) {
+  allMarkdownRemark( filter: { fields: { source: { eq: "posts" } } }) {
     edges {
       node {
         objectID: fileAbsolutePath
