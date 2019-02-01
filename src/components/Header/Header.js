@@ -6,6 +6,7 @@ import VisibilitySensor from "react-visibility-sensor";
 import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
+import { FaGithub, FaGitlab, FaTwitter, FaLinkedin } from "react-icons/fa/";
 
 import avatar from "../../images/jpg/avatar.jpg";
 
@@ -36,14 +37,24 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <header className={`header ${this.getHeaderSize()}`}>
-          <Link to="/" className="logoType">
-            <div className="logo">
-              <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
-            </div>
+          <div className="logoType">
+            <Link to="/">
+              <div className="logo">
+                <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
+              </div>
+            </Link>
             <div className="type">
-              <h1>{config.headerTitle}</h1>
+              <Link to="/">
+                <h1>{config.headerTitle}</h1>
+              </Link>
+              <span>
+                <a className="socialLink" href={config.authorSocialLinks.github.url}><FaGithub /></a>
+                <a className="socialLink" href={config.authorSocialLinks.gitlab.url}><FaGitlab /></a>
+                <a className="socialLink" href={config.authorSocialLinks.twitter.url}><FaTwitter /></a>
+                <a className="socialLink" href={config.authorSocialLinks.linkedin.url}><FaLinkedin /></a>
+              </span>
             </div>
-          </Link>
+          </div>
           <FontLoadedContext.Consumer>
             {loaded => (
               <ScreenWidthContext.Consumer>
@@ -78,7 +89,7 @@ class Header extends React.Component {
             width: 100%;
             align-items: center;
 
-            :global(a.logoType) {
+            :global(div.logoType) {
               align-items: center;
               display: flex;
               flex-direction: "column";
@@ -107,6 +118,10 @@ class Header extends React.Component {
             font-size: ${theme.font.size.xxs};
             letter-spacing: 0;
             margin: 0;
+          }
+
+          .socialLink {
+            margin-right: 5px;
           }
 
           .logo {
@@ -156,7 +171,7 @@ class Header extends React.Component {
                 border: none;
               }
 
-              :global(a.logoType),
+              :global(div.logoType),
               h1 {
                 color: ${theme.color.neutral.white};
               }
@@ -197,7 +212,7 @@ class Header extends React.Component {
               }
 
               &.homepage:not(.fixed) {
-                :global(a.logoType),
+                :global(div.logoType),
                 h1 {
                   color: ${theme.color.neutral.white};
                 }
@@ -207,7 +222,7 @@ class Header extends React.Component {
               }
             }
 
-            .header :global(a.logoType) {
+            .header :global(div.logoType) {
               text-align: left;
               flex-direction: row;
               flex-shrink: 0;
@@ -240,6 +255,7 @@ class Header extends React.Component {
                 opacity: 1;
               }
             }
+
           }
         `}</style>
       </React.Fragment>

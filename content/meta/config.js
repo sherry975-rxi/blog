@@ -30,10 +30,19 @@ module.exports = {
   // gravatarImgMd5: "https://www.gravatar.com/avatar/1db853e4df386e8f699e4b35505dd8c6",
   gravatarImgMd5: "",
 
-  // social
-  authorSocialLinks: [
-    { name: "github", url: "https://github.com/rameezk" },
-    { name: "twitter", url: "https://twitter.com/RameezKhanSA" },
-    { name: "linkedin", url: "http://linkedin.com/in/khanrameez" }
-  ]
+  authorSocialLinks: {
+    github: {
+      url: "https://github.com/rameezk"
+    },
+    gitlab: {
+      url: "https://gitlab.com/rameezkhan"
+    },
+    twitter: {
+      url: "https://twitter.com/RameezKhanSA"
+    },
+    linkedin: {
+      url: "https://linkedin.com/in/khanrameez"
+    }
+  }
+
 };
