@@ -1,5 +1,5 @@
 ---
-title: "Proxy SSH traffic via bastion hosts with Proxyjump"
+title: "Proxy SSH traffic via Bastion Hosts with Proxyjump"
 category: "ssh"
 tags: ["ssh", "bastion", "security"]
 cover: proxyjump-dbsaydad-2829s.png
