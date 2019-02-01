@@ -48,10 +48,10 @@ class Header extends React.Component {
                 <h1>{config.headerTitle}</h1>
               </Link>
               <span>
-                <a className="socialLink" href={config.authorSocialLinks.github.url}><FaGithub /></a>
-                <a className="socialLink" href={config.authorSocialLinks.gitlab.url}><FaGitlab /></a>
-                <a className="socialLink" href={config.authorSocialLinks.twitter.url}><FaTwitter /></a>
-                <a className="socialLink" href={config.authorSocialLinks.linkedin.url}><FaLinkedin /></a>
+                <a className="socialLink" target="_blank" href={config.authorSocialLinks.github.url}><FaGithub /></a>
+                <a className="socialLink" target="_blank" href={config.authorSocialLinks.gitlab.url}><FaGitlab /></a>
+                <a className="socialLink" target="_blank" href={config.authorSocialLinks.twitter.url}><FaTwitter /></a>
+                <a className="socialLink" target="_blank" href={config.authorSocialLinks.linkedin.url}><FaLinkedin /></a>
               </span>
             </div>
           </div>
