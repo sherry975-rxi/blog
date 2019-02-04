@@ -40,7 +40,10 @@ class Header extends React.Component {
           <div className="logoType">
             <Link to="/">
               <div className="logo">
-                <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
+                <img
+                  src={config.gravatarImgMd5 == "" ? avatar : config.gravatarImgMd5}
+                  alt={config.siteTitle}
+                />
               </div>
             </Link>
             <div className="type">
@@ -48,10 +51,34 @@ class Header extends React.Component {
                 <h1>{config.headerTitle}</h1>
               </Link>
               <span>
-                <a className="socialLink" target="_blank" href={config.authorSocialLinks.github.url}><FaGithub /></a>
-                <a className="socialLink" target="_blank" href={config.authorSocialLinks.gitlab.url}><FaGitlab /></a>
-                <a className="socialLink" target="_blank" href={config.authorSocialLinks.twitter.url}><FaTwitter /></a>
-                <a className="socialLink" target="_blank" href={config.authorSocialLinks.linkedin.url}><FaLinkedin /></a>
+                <a
+                  className="socialLink"
+                  target="_blank"
+                  href={config.authorSocialLinks.github.url}
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  className="socialLink"
+                  target="_blank"
+                  href={config.authorSocialLinks.gitlab.url}
+                >
+                  <FaGitlab />
+                </a>
+                <a
+                  className="socialLink"
+                  target="_blank"
+                  href={config.authorSocialLinks.twitter.url}
+                >
+                  <FaTwitter />
+                </a>
+                <a
+                  className="socialLink"
+                  target="_blank"
+                  href={config.authorSocialLinks.linkedin.url}
+                >
+                  <FaLinkedin />
+                </a>
               </span>
             </div>
           </div>
@@ -255,7 +282,6 @@ class Header extends React.Component {
                 opacity: 1;
               }
             }
-
           }
         `}</style>
       </React.Fragment>
