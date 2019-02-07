@@ -29,7 +29,7 @@ const NotFoundPage = props => {
         }
 
         .code {
-          font-size: xx-large;
+          font-size: x-large;
         }
 
         .accent {
