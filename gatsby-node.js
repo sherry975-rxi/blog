@@ -142,7 +142,7 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-exports.onCreateWebpackConfig = ({ stage, actions, loaders }, options) => {
+exports.onCreateWebpackConfig = ({ stage, actions }, options) => {
   switch (stage) {
     case `build-javascript`:
       actions.setWebpackConfig({
@@ -155,20 +155,6 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders }, options) => {
             defaultSizes: "gzip"
           })
         ]
-      });
-
-    case `build-html`:
-      actions.setWebpackConfig({
-        module: {
-          rules: [
-            {
-              test: /^.*(react-chat-widget).*\.(js)$/,
-              use: [
-                loaders.null()
-              ]
-            },
-          ],
-        },
       });
   }
 };
