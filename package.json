@@ -38,6 +38,7 @@
     "prismjs": "^1.15.0",
     "react": "^16.5.2",
     "react-addons-perf": "^15.4.2",
+    "react-chat-widget": "^2.1.4-1",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.1.0",
