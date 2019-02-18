@@ -5,6 +5,9 @@ import { ThemeContext } from "../layouts";
 import Blog from "../components/Blog";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
+import { Widget } from 'react-chat-widget';
+
+import 'react-chat-widget/lib/styles.css';
 
 class IndexPage extends React.Component {
   separator = React.createRef();
@@ -53,6 +56,11 @@ class IndexPage extends React.Component {
         </ThemeContext.Consumer>
 
         <Seo facebook={facebook} />
+
+        <Widget 
+          title="Hi there 👋🏽"
+          subtitle="What can I help you with today?"
+        />
 
         <style jsx>{`
           hr {
