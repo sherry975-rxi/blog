@@ -5,9 +5,14 @@ import { ThemeContext } from "../layouts";
 import Blog from "../components/Blog";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
-import { Widget } from 'react-chat-widget';
+
+let Widget = undefined
+if (typeof window !== `undefined`) {
+  Widget = require("react-chat-widget")
+}
 
 import 'react-chat-widget/lib/styles.css';
+import avatar from "../images/jpg/avatar.jpg"
 
 class IndexPage extends React.Component {
   separator = React.createRef();
@@ -57,10 +62,13 @@ class IndexPage extends React.Component {
 
         <Seo facebook={facebook} />
 
-        <Widget 
+        {
+        !!Widget && <Widget 
           title="Hi there 👋🏽"
           subtitle="What can I help you with today?"
+          profileAvater={avatar}
         />
+        }
 
         <style jsx>{`
           hr {
