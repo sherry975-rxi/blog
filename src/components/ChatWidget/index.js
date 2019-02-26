@@ -12,6 +12,10 @@ class ChatWidget extends React.Component {
     this.state = { showChat: false };
   }
 
+  handleNewUserMessage = newMessage => {
+    console.log(`message: ${newMessage}`);
+  };
+
   render() {
     return (
       this.state.showChat && (
@@ -20,6 +24,7 @@ class ChatWidget extends React.Component {
             title="Hi there 👋🏽"
             subtitle="What can I help you with today?"
             profileAvatar={avatar}
+            handleNewUserMessage={this.handleNewUserMessage}
           />
           <style jsx>
             {`
@@ -40,6 +45,8 @@ class ChatWidget extends React.Component {
   componentDidMount() {
     chatWidget = require("react-chat-widget");
     this.setState({ showChat: true });
+    chatWidget.addResponseMessage("Hi 👋🏽");
+    chatWidget.addResponseMessage("What can I help you with today?");
   }
 }
 
