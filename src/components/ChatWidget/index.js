@@ -1,10 +1,14 @@
-import "react-chat-widget/lib/styles.css";
-
 import React from "react";
+import { ApiAiClient } from "api-ai-javascript";
+
+import "react-chat-widget/lib/styles.css";
 
 import avatar from "../../images/jpg/avatar.jpg";
 
 let chatWidget;
+const dialogFlowClient = new ApiAiClient({
+  accessToken: "7e51983981b3451b97fc5f98c8938f22"
+});
 
 class ChatWidget extends React.Component {
   constructor() {
@@ -12,8 +16,22 @@ class ChatWidget extends React.Component {
     this.state = { showChat: false };
   }
 
+  handleResponse = response => {
+    chatWidget.addResponseMessage(response);
+  };
+
   handleNewUserMessage = newMessage => {
-    console.log(`message: ${newMessage}`);
+    dialogFlowClient
+      .textRequest(newMessage)
+      .then(response => {
+        if (response.status.code === 200) {
+          if (response.result && response.result.fulfillment) {
+            const reply = response.result.fulfillment.speech;
+            this.handleResponse(reply);
+          }
+        }
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -45,8 +63,8 @@ class ChatWidget extends React.Component {
   componentDidMount() {
     chatWidget = require("react-chat-widget");
     this.setState({ showChat: true });
-    chatWidget.addResponseMessage("Hi 👋🏽");
-    chatWidget.addResponseMessage("What can I help you with today?");
+    this.handleResponse("Hi 👋🏽");
+    this.handleResponse("What can I help you with today?");
   }
 }
 
