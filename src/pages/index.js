@@ -5,21 +5,10 @@ import { ThemeContext } from "../layouts";
 import Blog from "../components/Blog";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
-
-let chatWidget;
-
-import 'react-chat-widget/lib/styles.css';
-import avatar from "../images/jpg/avatar.jpg"
+import ChatWidget from "../components/ChatWidget";
 
 class IndexPage extends React.Component {
   separator = React.createRef();
-
-  constructor() {
-    super()
-    this.state = {
-      showChat: false
-    }
-  }
 
   scrollToContent = e => {
     this.separator.current.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -66,13 +55,7 @@ class IndexPage extends React.Component {
 
         <Seo facebook={facebook} />
 
-        {
-        this.state.showChat && <chatWidget.Widget
-          title="Hi there 👋🏽"
-          subtitle="What can I help you with today?"
-          profileAvater={avatar}
-        />
-        }
+        <ChatWidget />
 
         <style jsx>{`
           hr {
@@ -82,11 +65,6 @@ class IndexPage extends React.Component {
         `}</style>
       </React.Fragment>
     );
-  }
-
-  componentDidMount() {
-    chatWidget = require("react-chat-widget")
-    this.setState({showChat: true})
   }
 }
 

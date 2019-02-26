@@ -1262,6 +1262,11 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
+api-ai-javascript@^2.0.0-beta.21:
+  version "2.0.0-beta.21"
+  resolved "https://registry.yarnpkg.com/api-ai-javascript/-/api-ai-javascript-2.0.0-beta.21.tgz#43465f6835dc4f0e14e0311c0bb64017f3148b5b"
+  integrity sha1-Q0ZfaDXcTw4U4DEcC7ZAF/MUi1s=
+
 apollo-link@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.3.tgz#9bd8d5fe1d88d31dc91dae9ecc22474d451fb70d"
