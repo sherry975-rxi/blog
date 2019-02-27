@@ -53,6 +53,10 @@ class ChatWidget extends React.Component {
               :global(.rcw-conversation-container > .rcw-header) {
                 background-color: #709425;
               }
+
+              :global(.rcw-new-message) {
+                font-size: 16px;
+              }
             `}
           </style>
         </React.Fragment>
