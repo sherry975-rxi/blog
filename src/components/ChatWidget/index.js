@@ -29,6 +29,10 @@ class ChatWidget extends React.Component {
             const reply = response.result.fulfillment.speech;
             this.handleResponse(reply);
           }
+        } else {
+          this.handleResponse(
+            "Aww man! 😕 Something weird has happeded. But don't worry, I've let my Human know."
+          );
         }
       })
       .catch(err => console.log(err));
