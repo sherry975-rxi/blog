@@ -70,7 +70,9 @@ class ChatWidget extends React.Component {
 
   componentDidMount() {
     chatWidget = require("react-chat-widget");
+
     this.setState({ showChat: true });
+    chatWidget.dropMessages();
     this.handleResponse("Hi 👋🏽");
     this.handleResponse("What can I help you with today?");
   }
