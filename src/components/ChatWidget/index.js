@@ -58,6 +58,10 @@ class ChatWidget extends React.Component {
                 background-color: #709425;
               }
 
+              :global(.rcw-conversation-container .rcw-close-button) {
+                background-color: #709425;
+              }
+
               :global(.rcw-new-message) {
                 font-size: 16px;
               }
