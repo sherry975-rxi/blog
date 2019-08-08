@@ -2,4 +2,4 @@
 title: author
 ---
 
-**Rameez Khan** DevOps Engineer. I'm about all things Tech, Science and Films.
+**Rameez Khan** I'm an electrical engineer turned software developer trying to build cool things and learning as I go.
